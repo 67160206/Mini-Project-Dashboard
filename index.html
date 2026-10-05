@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>รถมือสองที่อายุมาก = ตลาดอะไหล่ที่กำลังโต</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--tx:#1d2330;--mu:#6b7280;--ac:#e8590c;--ac2:#1f4e79;--bd:#e5e1d8}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12151c;--card:#1b1f2a;--tx:#eceff4;--mu:#9aa3b2;--ac:#ff8a4c;--ac2:#6fa8dc;--bd:#2b3140}}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 "Noto Sans Thai",system-ui,sans-serif}
+main{max-width:980px;margin:auto;padding:24px 18px 60px}
+header{padding:36px 0 8px}.tag{color:var(--ac);font-weight:700;letter-spacing:.06em;font-size:13px}
+h1{font-size:clamp(26px,5vw,42px);line-height:1.25;margin:6px 0 10px}
+h2{font-size:22px;margin:0 0 4px}.sec{margin-top:44px}.n{color:var(--ac);font-weight:700}
+.lead{color:var(--mu);margin:0 0 14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}
+.kpi b{display:block;font-size:34px;color:var(--ac);line-height:1.2}.kpi span{color:var(--mu);font-size:14px}
+.ins{border-left:4px solid var(--ac);padding:8px 14px;margin-top:12px;background:var(--card);border-radius:0 10px 10px 0}
+svg{width:100%;height:auto;display:block}svg text{fill:var(--mu);font-size:11px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+th{color:var(--mu);font-weight:600}.bar{display:inline-block;height:8px;border-radius:4px;background:var(--ac);vertical-align:middle;margin-left:6px}
+ul.act{padding-left:20px}ul.act li{margin:8px 0}
+footer{margin-top:50px;color:var(--mu);font-size:13px;border-top:1px solid var(--bd);padding-top:14px}
+</style></head><body><main>
+<header><div class="tag">DATA STORY · AUTOMOTIVE PARTS &amp; AFTERMARKET</div>
+<h1>รถจักรยานยนต์มือสองที่ “แก่” และวิ่งไกล คือโอกาสของธุรกิจอะไหล่</h1>
+<p class="lead">วิเคราะห์จากประกาศขายรถมือสอง <span id="n"></span> คัน (ไฟล์ BIKE_DETAILS.csv) เพื่อดูว่าตลาดชิ้นส่วนทดแทน (Aftermarket) ควรโฟกัสที่ไหน</p>
+<div class="kpis" id="kpis"></div></header>
+
+<section class="sec"><h2><span class="n">01</span> รถที่หมุนเวียนในตลาดไม่ใช่รถใหม่</h2>
+<p class="lead">ปีผลิตของรถที่ถูกประกาศขาย (เทียบปีอ้างอิง 2020)</p>
+<div class="card"><svg id="c1" viewBox="0 0 700 240"></svg></div>
+<div class="ins">มากกว่าครึ่งของรถมีอายุ <b>5 ปีขึ้นไป</b> ซึ่งเป็นช่วงที่ชิ้นส่วนสึกหรอ เช่น ผ้าเบรก โซ่สเตอร์ แบตเตอรี่ และช่วงล่าง เริ่มถึงรอบเปลี่ยน</div></section>
+
+<section class="sec"><h2><span class="n">02</span> ระยะทางสะสมบอกรอบการเปลี่ยนอะไหล่</h2>
+<p class="lead">จำนวนรถแยกตามช่วงกิโลเมตรที่วิ่งแล้ว</p>
+<div class="card"><svg id="c2" viewBox="0 0 700 220"></svg></div>
+<div class="ins">รถราว 1 ใน 5 วิ่งเกิน <b>50,000 กม.</b> เข้าสู่ช่วงงานซ่อมใหญ่ เช่น ชุดคลัทช์ สายพาน ลูกสูบ และระบบไฟฟ้า ส่วนรถ 25,000–50,000 กม. เป็นกลุ่มใหญ่ที่สุดและกำลังจะเข้าสู่ช่วงนี้</div></section>
+
+<section class="sec"><h2><span class="n">03</span> มูลค่ารถลดเร็ว คนจึงเลือกซ่อมแทนซื้อใหม่</h2>
+<p class="lead">ราคาขายมือสองเป็น % ของราคา Ex-showroom (ค่ากลางแยกตามอายุรถ)</p>
+<div class="card"><svg id="c3" viewBox="0 0 700 240"></svg></div>
+<div class="ins">รถอายุ 5 ปีเหลือมูลค่าราว <b>64%</b> และอายุ 10 ปีเหลือราว <b>37%</b> เจ้าของรถมีแรงจูงใจต่ำที่จะลงทุนกับอะไหล่แพง จึงเป็นโอกาสของอะไหล่ทดแทนคุณภาพดีราคาคุ้มค่า</div></section>
+
+<section class="sec"><h2><span class="n">04</span> แบรนด์ไหนควรเป็นเป้าหมายอะไหล่ก่อน</h2>
+<p class="lead">สัดส่วนรถที่ “อายุ ≥ 5 ปี หรือวิ่ง ≥ 50,000 กม.” (กลุ่มความต้องการอะไหล่สูง) เฉพาะแบรนด์ที่มีข้อมูล ≥ 25 คัน</p>
+<div class="card tw"><table id="tb"></table></div>
+<div class="ins">Hero และ Bajaj มีทั้งปริมาณและสัดส่วนรถเก่าสูง เหมาะกับอะไหล่สึกหรอปริมาณมาก ส่วน Royal Enfield ราคารถสูงและยังใหม่กว่า เหมาะกับอะไหล่ตกแต่งและงานพรีเมียม</div></section>
+
+<section class="sec"><h2><span class="n">05</span> ข้อเสนอแนะสำหรับผู้ผลิตและผู้จำหน่ายอะไหล่</h2>
+<div class="card"><ul class="act">
+<li><b>จัดชุดอะไหล่ตามรอบกิโลเมตร</b> เช่น ชุด 25k / 50k / 75k ให้ร้านซ่อมสั่งง่าย</li>
+<li><b>เน้นสต็อกอะไหล่รุ่นยอดนิยมที่อายุมาก</b> โดยเฉพาะ Bajaj Pulsar, Hero และ Honda Activa</li>
+<li><b>ตั้งราคาให้สอดคล้องมูลค่ารถ</b> สินค้าเกรดทดแทนคุณภาพดีขายได้ดีกับรถอายุเกิน 5 ปี</li>
+<li><b>ร่วมมือกับตลาดรถมือสองและร้านซ่อม</b> เสนอแพ็กเกจเตรียมรถก่อนขายและบริการหลังขาย</li></ul></div></section>
+
+<footer>ที่มา: BIKE_DETAILS.csv (ปีอ้างอิง 2020; ex_showroom_price มีค่าว่าง 41% จึงใช้เฉพาะแถวที่มีข้อมูลในหัวข้อ 03). ข้อมูลเป็นรถมือสองจากประกาศขาย ไม่ใช่ข้อมูลยอดขายอะไหล่โดยตรง จึงเป็นการประเมินความต้องการทางอ้อม<br>รายชื่อกลุ่ม: ดูไฟล์ MEMBERS.md</footer>
+</main>
+<script>
+const D={"n": 1061, "medAge": 5.0, "medKm": 25000, "medPrice": 45000, "km50": 19.5, "age5": 56.6, "multi": 12.9, "year": {"2005": 14, "2006": 20, "2007": 29, "2008": 28, "2009": 28, "2010": 60, "2011": 61, "2012": 70, "2013": 73, "2014": 91, "2015": 100, "2016": 107, "2017": 133, "2018": 131, "2019": 86, "2020": 3}, "yearOld": 27, "brand": {"Bajaj": 260, "Hero": 232, "Honda": 204, "Royal Enfield": 109, "Yamaha": 102, "TVS": 69, "Suzuki": 30, "KTM": 24}, "km": {"<10k": 210, "10-25k": 336, "25-50k": 345, "50-75k": 113, "75-100k": 42, "100k+": 15}, "owner": {"1st owner": 924, "2nd owner": 123, "3rd owner": 11, "4th owner": 3}, "ret": {"1": 93.8, "2": 85.5, "3": 76.4, "4": 64.2, "5": 64.4, "6": 58.5, "7": 53.4, "8": 46.4, "9": 41.3, "10": 37.4, "11": 41.0, "12": 23.7, "13": 32.2}, "kmAge": {"1": 5500, "2": 14000, "3": 20000, "4": 25000, "5": 25000, "6": 28243, "7": 30000, "8": 36000, "9": 39500, "10": 43000, "11": 47500, "12": 52000, "13": 70000, "14": 40500}, "tbl": [["Hero", 232, 74.6, 35000, 7.0, 32950], ["Bajaj", 260, 64.2, 30000, 6.0, 40000], ["Honda", 204, 58.3, 25000, 5.0, 42000], ["Yamaha", 102, 52.9, 23000, 4.0, 55500], ["TVS", 69, 49.3, 22000, 4.0, 35000], ["Suzuki", 30, 46.7, 15000, 4.0, 45000], ["Royal Enfield", 109, 45.9, 15000, 4.0, 123000]], "hi": 59.0};
+const f=x=>x.toLocaleString("en-US"),NS="http://www.w3.org/2000/svg";
+document.getElementById("n").textContent=f(D.n);
+document.getElementById("kpis").innerHTML=[[D.medAge+" ปี","อายุรถกลาง (Median)"],[f(D.medKm)+" กม.","ระยะทางกลาง"],[D.hi+"%","รถกลุ่มอะไหล่ต้องการสูง"],[f(D.medPrice)+" ฿","ราคามือสองกลาง"]].map(k=>`<div class="card kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join("");
+function bars(id,keys,vals,hl){const s=document.getElementById(id),W=700,H=+s.viewBox.baseVal.height,m=28,mx=Math.max(...vals),w=(W-20)/keys.length;let h="";
+keys.forEach((k,i)=>{const bh=(H-m-24)*vals[i]/mx,x=10+i*w;h+=`<rect x="${x+w*.12}" y="${H-m-bh}" width="${w*.76}" height="${bh}" rx="3" fill="${hl&&hl(k,vals[i])?"var(--ac)":"var(--ac2)"}"/><text x="${x+w/2}" y="${H-m-bh-5}" text-anchor="middle">${vals[i]}</text><text x="${x+w/2}" y="${H-10}" text-anchor="middle">${k}</text>`});s.innerHTML=h}
+const ys=Object.keys(D.year);bars("c1",ys,ys.map(k=>D.year[k]),k=>2020-k>=5);
+const ks=Object.keys(D.km);bars("c2",ks,ks.map(k=>D.km[k]),k=>["50-75k","75-100k","100k+"].includes(k));
+(function(){const s=document.getElementById("c3"),a=Object.keys(D.ret),W=700,H=240,p=36;
+const X=i=>p+i*(W-p-14)/(a.length-1),Y=v=>H-26-(H-50)*v/100;let h="";
+[0,25,50,75,100].forEach(v=>h+=`<line x1="${p}" x2="${W-10}" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--bd)"/><text x="4" y="${Y(v)+4}">${v}%</text>`);
+h+=`<polyline fill="none" stroke="var(--ac)" stroke-width="3" points="${a.map((k,i)=>X(i)+","+Y(D.ret[k])).join(" ")}"/>`;
+a.forEach((k,i)=>h+=`<circle cx="${X(i)}" cy="${Y(D.ret[k])}" r="4" fill="var(--ac)"/><text x="${X(i)}" y="${H-8}" text-anchor="middle">${k} ปี</text>`);s.innerHTML=h})();
+document.getElementById("tb").innerHTML="<tr><th>แบรนด์</th><th>จำนวน (คัน)</th><th>อะไหล่ต้องการสูง</th><th>กม. กลาง</th><th>อายุกลาง (ปี)</th><th>ราคากลาง (฿)</th></tr>"+D.tbl.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}%<span class="bar" style="width:${r[2]*.9}px"></span></td><td>${f(r[3])}</td><td>${r[4]}</td><td>${f(r[5])}</td></tr>`).join("");
+</script></body></html>
